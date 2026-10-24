@@ -1,0 +1,16 @@
+{
+  "name": "newvectors 的磁力插件",
+  "sequence": 10,
+  "plugins": [
+    {
+      "id": "newvectors.magnet-search",
+      "name": "磁力搜索引擎",
+      "version": "1.1.2",
+      "description": "订阅剧集搜索时，按用户配置的磁力站规则（site_rules）抓取网页、解析出磁力链接并返回给 Muvyo 展示/转存/离线下载。支持 XPath/正则提取标题、大小、时间、磁力链接；多站并行搜索，不内置任何磁力站。",
+      "author": "newvectors",
+      "path": "plugins/newvectors.magnet-search",
+      "api": 1
+    }
+  ],
+  "public_key": "Rz2w/HvPm0IKubLzNdC66Z5Mwg1RDmvcQ3MwPPWRp40="
+}

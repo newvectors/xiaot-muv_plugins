@@ -1,0 +1,30 @@
+{
+ "version": 1,
+ "certificate": {
+  "certificate": {
+   "aud": "mediavault-addon-author",
+   "version": 1,
+   "serial": 20,
+   "author_id": "gh-143688859",
+   "author": "newvectors",
+   "namespace": "newvectors",
+   "public_key": "+UEV2wmYwVzAUVVWOFBbkaZTdjTO86M5a61Pha/SdgY=",
+   "issued_at": 1792818712,
+   "expires_at": 1824354712,
+   "content_key": "EUBHiDC5Y/BeX8jNHFwES5gBvsy/1JiWUBa9wDN4PyU=",
+   "content_key_version": 1,
+   "installation_key": "TXFW1uxjnM2Va2neZXq088uGLi/eX9rHiZZUdQrqfQ8="
+  },
+  "signature": "V8EgJaGqlfOu8jvQghoqN9ioPrAACV9U2QkoXLyK55g8jNfn5GQYbwYRawLKTA3qIQLUEKjKisPHfC9F9K0MDg=="
+ },
+ "payload": {
+  "plugin_id": "newvectors.magnet-search",
+  "version": "1.1.2",
+  "files": {
+   "README.md": "f9c86d2a1246c23bac88c1c9fe046903ab8f9941830d829ab537c5ed8ae011cd",
+   "encrypted.json": "dbd64ac275b1bf6e0bf5f943509c64f544328be1e3b6cf18cc84e88a07e24f4e",
+   "manifest.json": "e046253ec4ad8725f3380e040fa0481d175d09855e13bb134a055b174b050ca0"
+  }
+ },
+ "signature": "TIP+V+DC0nXPJJ6zI1E9Bp3+61rRBpCwryjLwelyaeCGs8MWSVF2bOwZynBA2qu5zK0JL5qephqRb9QbmmrpAA=="
+}

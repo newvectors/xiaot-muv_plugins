@@ -1,0 +1,78 @@
+{
+  "api": 1,
+  "id": "newvectors.magnet-search",
+  "name": "磁力搜索引擎",
+  "version": "1.1.2",
+  "release_notes": "1.1.2：搜索结果页不再显示「部分来源失败」（站点失败只记日志，不影响体验）；search_url 自动规范化（缺失协议自动补 https、清理首尾脏字符）；精简已授权域名白名单至 8 个在用站点，去掉不支持/未使用的域名。",
+  "min_mv_version": "3.12.9",
+  "author": "newvectors",
+  "description": "订阅剧集搜索时，按用户配置的磁力站规则（site_rules）抓取网页、解析出磁力链接并返回给 Muvyo 展示/转存/离线下载。支持 XPath/正则提取标题、大小、时间、磁力链接；多站并行搜索，不内置任何磁力站。",
+  "permissions": {
+    "domains": [
+      "share.dmhy.org",
+      "nyaa.si",
+      "sukebei.nyaa.si",
+      "u9a9.com",
+      "u3c3.com",
+      "cn.nyaa.net",
+      "sukebei.nyaa.net",
+      "so2.btsow.top"
+    ]
+  },
+  "config": [
+    {
+      "key": "site_rules",
+      "label": "磁力站规则(JSON)",
+      "type": "textarea",
+      "placeholder": "[]",
+      "help": "数组，每个站点含 search_url / list_xpath / fields(title,link,size,time) / next_page。粘贴单个站点对象 {…} 也会自动生效。域名必须在下方「已授权网站」白名单内。"
+    },
+    {
+      "key": "max_pages",
+      "label": "每站最多翻页数",
+      "type": "number",
+      "default": "1",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "unit": "页"
+    },
+    {
+      "key": "max_concurrency",
+      "label": "最多并行抓取数",
+      "type": "number",
+      "default": "4",
+      "min": 1,
+      "max": 8,
+      "step": 1,
+      "unit": "站",
+      "help": "同时抓取多少个站点。越大越快但占用资源多；配置较低的设备建议调小（如 2），避免卡顿。"
+    },
+    {
+      "key": "max_items",
+      "label": "每站最多返回条数",
+      "type": "number",
+      "default": "20",
+      "min": 1,
+      "max": 50,
+      "step": 1,
+      "unit": "条"
+    }
+  ],
+  "settings": {
+    "description": "订阅/资源搜索时，本插件会按你填写的站点规则抓取网页并解析出磁力链接。多站第 1 页并行抓取（可在「最多并行抓取数」调整），速度更快。\n\n【填写方式】在「磁力站规则」里粘贴规则 JSON 数组 [...]（也可以直接粘贴单个站点对象 {...}，会自动生效）。历史规则文件内容直接合并进同一份数组即可。search_url 缺 https:// 会自动补全。\n\n【状态提示】设置页顶部「规则状态」会显示：未填写 / 解析失败（含原因）/ 无有效规则 / 已生效 N 条。保存后刷新即可看到最新状态。\n\n【失败提示】某个站点抓取/解析失败时只在插件日志中记录原因（含站点与完整 URL），不影响搜索结果页展示。\n\n【测试方法】在 Muvyo 资源搜索里搜一个关键词（如「海贼王」），看是否返回磁力结果。",
+    "links": []
+  },
+  "capabilities": {
+    "search": {
+      "link_types": [
+        "magnet"
+      ],
+      "supports_tmdb": false,
+      "resolve": false
+    },
+    "account": {
+      "title": "规则状态"
+    }
+  }
+}
