@@ -11,7 +11,7 @@
 - 最低 Muvyo 版本：v3.12.9+
 - **📖 详细使用说明**：[plugins/newvectors.magnet-search/README.md](./plugins/newvectors.magnet-search/README.md)
 
-> 插件**不内置任何磁力站**，完全由你在设置里填写的 `site_rules` 驱动。插件 README 内附有可用站点的规则 JSON 模板，复制粘贴即可启用。
+> 插件**不内置任何磁力站**，完全由你在设置里填写的 `site_rules` 驱动。
 
 ## 安装
 
