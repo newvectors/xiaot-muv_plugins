@@ -19,12 +19,12 @@
  },
  "payload": {
   "plugin_id": "newvectors.magnet-search",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "files": {
-   "README.md": "42e4880b01dbf7d5e137ac49e3e9aa48d3b0fb6e7e68b1a2c4107eba436ab070",
-   "encrypted.json": "8da2e32739fd423e8b1998e13c0dedaf24f9820e430d8a4567308c986077f00b",
-   "manifest.json": "4e53b02c6c833ab71a81d09c70d57622762029888ae5cf806f2711ddd06785a2"
+   "README.md": "ad6bd182148cd2324ed2b423067467be2f89dfeb0a898622bd6bf99a53848429",
+   "encrypted.json": "05a58bee60e25adf3df8712e91208e50d7187c5133bb41e590f04e14eadcbde8",
+   "manifest.json": "95b01bccb41a1e2bf7fe8290044395687614c61834379b044eb7d46c003390e2"
   }
  },
- "signature": "b0Fws/whz+yMaFWoez1WqTqY7ZjCTFXB8RGu/9Q7gitEaVU6XMDcZfjwP4z75UMk9vT+UFjwpjvrDUdK6/xwCQ=="
+ "signature": "EKaSbKNJnljuO4/ADO2mGoA+R7izA31JTJCLd614ZZLnVNqPM8pbjGMWY6CkSF7Hus+BwZJNBwrtmInUGPMgBw=="
 }
