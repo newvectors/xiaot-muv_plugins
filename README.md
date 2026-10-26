@@ -16,7 +16,7 @@
 ## 安装
 
 1. 打开 Muvyo → **第三方插件 → 插件仓库**
-2. 添加本仓库地址：`https://github.com/newvectors/muvyo-magnet`
+2. 添加本仓库地址：`https://github.com/newvectors/xiaot-muv_plugins`
 3. 在列表中找到「磁力搜索引擎」→ 安装
 4. 进入插件设置，粘贴磁力站规则 JSON 并启用
 

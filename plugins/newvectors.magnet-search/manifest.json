@@ -2,10 +2,10 @@
   "api": 1,
   "id": "newvectors.magnet-search",
   "name": "磁力搜索引擎",
-  "version": "1.1.2",
-  "release_notes": "1.1.2：搜索结果页不再显示「部分来源失败」（站点失败只记日志，不影响体验）；search_url 自动规范化（缺失协议自动补 https、清理首尾脏字符）；精简已授权域名白名单至 8 个在用站点，去掉不支持/未使用的域名。",
+  "version": "1.2.1",
+  "release_notes": "1.2.1：标签格式统一为 [S01][E100]（无空格、集数用 E 前缀）；作者署名改为 XiaoT。",
   "min_mv_version": "3.12.9",
-  "author": "newvectors",
+  "author": "XiaoT",
   "description": "订阅剧集搜索时，按用户配置的磁力站规则（site_rules）抓取网页、解析出磁力链接并返回给 Muvyo 展示/转存/离线下载。支持 XPath/正则提取标题、大小、时间、磁力链接；多站并行搜索，不内置任何磁力站。",
   "permissions": {
     "domains": [
@@ -14,9 +14,10 @@
       "sukebei.nyaa.si",
       "u9a9.com",
       "u3c3.com",
-      "cn.nyaa.net",
+      "nyaa.net",
       "sukebei.nyaa.net",
-      "so2.btsow.top"
+      "so2.btsow.top",
+      "shturl.cc"
     ]
   },
   "config": [
