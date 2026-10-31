@@ -14,10 +14,14 @@ mv_addon.py
 .DS_Store
 __pycache__/
 
-# 本地调试包与工作缓存，不上传
+# 本地调试包与工作缓存，不上传（dist/ 里是 sign --zip 的本地调试包）
+/dist/
 /dist-debug/
 /.workbuddy/
 
 # 本地参考资料与发布工具，不上传
 /pluginsdemo/
 /tools/
+
+# 本地打包说明含本机绝对路径，不上传
+/docs/LOCAL-PACKAGING.md
