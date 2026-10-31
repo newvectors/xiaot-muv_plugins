@@ -1,6 +1,6 @@
 {
  "name": "newvectors 的磁力插件",
- "sequence": 21,
+ "sequence": 22,
  "plugins": [
   {
    "id": "newvectors.magnet-search",
@@ -14,7 +14,7 @@
   {
    "id": "newvectors.quanyibao",
    "name": "权益宝",
-   "version": "1.0.0",
+   "version": "1.0.1",
    "description": "登录权益宝（quanyibao.com）后搜索影视资源，用积分购买并返回 115 网盘分享链接给 Muvyo 转存。支持查看剩余积分、每日自动签到。购买前会先读取服务端的解锁状态，已解锁的资源直接取链，不会重复扣分。",
    "author": "XiaoT",
    "path": "plugins/newvectors.quanyibao",
