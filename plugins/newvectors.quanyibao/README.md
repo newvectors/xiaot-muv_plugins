@@ -22,6 +22,24 @@
 | 允许扣积分购买 | 关闭后只给已解锁的资源，不会花积分 |
 | 积分不足时换账号 | 当前账号买不起时自动换下一个账号付款；关掉就只在主账号上试 |
 | 优先 4K/1080P | 同一作品多个资源时，分辨率高的排前面 |
+| 自定义 User-Agent | 一般不用改。想和自己浏览器完全一致时，从 `chrome://version` 复制整行「用户代理」贴进来 |
+
+## 请求头（不做显眼的自动化特征）
+
+`mv.fetch` 不设 `User-Agent` 时默认带 `Muvyo-Addon/1`，再缺 `Accept-Language`、`sec-ch-ua`，等于把「这是插件」写在请求上。1.1.1 起每个请求都按真实浏览器的形态发出：
+
+| 头 | 值 |
+|---|---|
+| `User-Agent` | 内置 Chrome 147 / macOS（与抓包一致），或设置里自定义 |
+| `Accept-Language` | `zh-CN,zh;q=0.9` |
+| `sec-ch-ua` / `-mobile` / `-platform` | 由 UA 反推，保证与 UA 自洽（Safari / Firefox 不发这组头，插件也不发） |
+| `Referer` | 跟随当前操作：搜索是 `/search?key=…`，取链与购买是 `/article/<postId>`，登录/签到是 `/` |
+| `Origin` | 仅 POST，`https://www.quanyibao.com` |
+| `sec-fetch-dest/mode/site` | `empty` / `cors` / `same-origin` |
+
+填了非 `Mozilla/5.0` 开头的值时会被忽略并退回内置 UA，避免把昵称之类当成 UA 发出去反而更刺眼。
+
+> 注：UA 与请求头只是 L7 指纹。TLS 指纹（JA3/JA4）、HTTP/2 帧序、请求节奏仍可能与真浏览器不同——站点目前在 Cloudflare 后面，实测这些头都能正常通过，没有触发挑战。
 
 ## 登录测试与多账号
 
@@ -101,6 +119,6 @@ Muvyo 的配置项没有按钮类型，所以「测试登录」不是单独一�
 # 静态：manifest / 权限 / 能力与函数对应（脚本来自 muvyo-addon-dev 技能）
 python3 ~/.workbuddy/skills/muvyo-addon-dev/scripts/check_addon.py . --namespace newvectors
 
-# 动态：按 action 分发的假 mv，跑 36 组用例 / 126 项断言（仓库内）
+# 动态：按 action 分发的假 mv，跑 39 组用例 / 146 项断言（仓库内）
 node ../../tools/qyb-addon-test/run.mjs .
 ```
