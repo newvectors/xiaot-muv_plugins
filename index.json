@@ -1,14 +1,23 @@
 {
  "name": "newvectors 的磁力插件",
- "sequence": 19,
+ "sequence": 21,
  "plugins": [
   {
    "id": "newvectors.magnet-search",
    "name": "磁力搜索引擎",
-   "version": "1.3.1",
+   "version": "1.3.2",
    "description": "订阅剧集搜索时，按用户配置的磁力站规则（site_rules）抓取网页、解析出磁力链接并返回给 Muvyo 展示/转存/离线下载。支持 XPath/正则提取标题、大小、时间、磁力链接；多站并行搜索，不内置任何磁力站。",
    "author": "XiaoT",
    "path": "plugins/newvectors.magnet-search",
+   "api": 1
+  },
+  {
+   "id": "newvectors.quanyibao",
+   "name": "权益宝",
+   "version": "1.0.0",
+   "description": "登录权益宝（quanyibao.com）后搜索影视资源，用积分购买并返回 115 网盘分享链接给 Muvyo 转存。支持查看剩余积分、每日自动签到。购买前会先读取服务端的解锁状态，已解锁的资源直接取链，不会重复扣分。",
+   "author": "XiaoT",
+   "path": "plugins/newvectors.quanyibao",
    "api": 1
   }
  ],

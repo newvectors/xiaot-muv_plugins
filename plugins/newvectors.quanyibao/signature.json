@@ -1,0 +1,30 @@
+{
+ "version": 1,
+ "certificate": {
+  "certificate": {
+   "aud": "mediavault-addon-author",
+   "version": 1,
+   "serial": 20,
+   "author_id": "gh-143688859",
+   "author": "newvectors",
+   "namespace": "newvectors",
+   "public_key": "+UEV2wmYwVzAUVVWOFBbkaZTdjTO86M5a61Pha/SdgY=",
+   "issued_at": 1792818712,
+   "expires_at": 1824354712,
+   "content_key": "EUBHiDC5Y/BeX8jNHFwES5gBvsy/1JiWUBa9wDN4PyU=",
+   "content_key_version": 1,
+   "installation_key": "TXFW1uxjnM2Va2neZXq088uGLi/eX9rHiZZUdQrqfQ8="
+  },
+  "signature": "V8EgJaGqlfOu8jvQghoqN9ioPrAACV9U2QkoXLyK55g8jNfn5GQYbwYRawLKTA3qIQLUEKjKisPHfC9F9K0MDg=="
+ },
+ "payload": {
+  "plugin_id": "newvectors.quanyibao",
+  "version": "1.0.0",
+  "files": {
+   "README.md": "930e2f6eefcbfaffe7413adbd42392ac53a9ffa26aeae71e6238ef103f2924de",
+   "encrypted.json": "d732127f953cb3dbb1b82f4003c5a9bdee236562e4f7e9dc6be0da4865f8b676",
+   "manifest.json": "b5d1abe5b793703a68cc99974aa1ed249441b4d382f3eecfeb900d9caf5037d9"
+  }
+ },
+ "signature": "hE2/VqK5E91/80cImAYv6ltjA8JpcUPQGJBKQoiyxO2CC09J7zqZtUzCte4sBOV2vjxoriwSm2fBN7DkRvQDBQ=="
+}

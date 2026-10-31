@@ -1,0 +1,97 @@
+{
+  "api": 1,
+  "id": "newvectors.quanyibao",
+  "name": "权益宝",
+  "version": "1.0.0",
+  "min_mv_version": "3.13.2",
+  "author": "XiaoT",
+  "description": "登录权益宝（quanyibao.com）后搜索影视资源，用积分购买并返回 115 网盘分享链接给 Muvyo 转存。支持查看剩余积分、每日自动签到。购买前会先读取服务端的解锁状态，已解锁的资源直接取链，不会重复扣分。",
+  "release_notes": "1.0.0：首个版本。账号密码登录（令牌本地缓存，过期自动续）、剩余积分展示、每日签到定时任务（时间在「定时任务」里设）、搜索影视并按需购买 115 资源，购买前校验解锁状态以避免重复扣分。",
+  "permissions": {
+    "domains": ["www.quanyibao.com"]
+  },
+  "config": [
+    {
+      "key": "username",
+      "label": "账号",
+      "type": "text",
+      "required": true,
+      "placeholder": "邮箱或 86 13800138000",
+      "help": "权益宝的登录账号。手机号要写成「国际区号+空格+号码」，例如 86 13800138000；邮箱直接填。"
+    },
+    {
+      "key": "password",
+      "label": "密码",
+      "type": "secret",
+      "required": true,
+      "help": "仅保存在本机 Muvyo，用于自动登录换取令牌。改密码后请在这里同步修改。"
+    },
+    {
+      "key": "max_titles",
+      "label": "每次最多查询影视数",
+      "type": "number",
+      "default": "3",
+      "min": 1,
+      "max": 8,
+      "step": 1,
+      "unit": "部",
+      "help": "关键词搜索时取前几部作品去查资源帖。数值越大越慢，每次调用最多 30 个请求。"
+    },
+    {
+      "key": "max_per_title",
+      "label": "每部最多网盘条目",
+      "type": "number",
+      "default": "2",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "unit": "个",
+      "help": "一部作品可能同时有多个网盘条目，这里限制最多取几个。"
+    },
+    {
+      "key": "allow_purchase",
+      "label": "允许扣积分购买",
+      "type": "bool",
+      "default": "true",
+      "help": "关闭后只返回已经解锁过的资源；未解锁的一律不买，避免误扣积分。"
+    },
+    {
+      "key": "prefer_uhd",
+      "label": "优先 4K/1080P",
+      "type": "bool",
+      "default": "true",
+      "help": "同一部作品有多个资源帖时，把分辨率高的排在前面。"
+    }
+  ],
+  "settings": {
+    "description": "填写权益宝的账号与密码后，插件会用它自动登录并在设置页顶部显示剩余积分。\n\n【搜索】在资源搜索里搜片名，插件会找到对应作品的资源帖，用积分解锁后把 115 网盘分享链接交给 Muvyo 转存。\n\n【不会重复扣分】每次获取链接前都会重新读取该资源的解锁状态：已经解锁过的直接取链不扣分；本次已扣过分但没拿到链接时，会按「可能已扣分」提示你到权益宝核对，不会自动重试。\n\n【每日签到】到插件设置的「定时任务」里打开「每日积分签到」，并把执行时间改到你希望的时刻即可；签到结果会推送到「签到」通知。\n\n【积分】按次购买会消耗积分，请留意设置页顶部显示的余额。",
+    "links": [
+      { "title": "权益宝官网", "url": "https://www.quanyibao.com/" }
+    ],
+    "columns": 2,
+    "sections": [
+      { "title": "账号", "fields": ["username", "password"] },
+      { "title": "搜索与购买", "description": "数值越小越快；关闭「允许扣积分购买」后只用已解锁的资源。", "fields": ["max_titles", "max_per_title", "allow_purchase", "prefer_uhd"] }
+    ]
+  },
+  "capabilities": {
+    "search": {
+      "link_types": ["115"],
+      "supports_tmdb": true,
+      "resolve": true,
+      "resolve_cost": "points"
+    },
+    "tasks": [
+      {
+        "id": "checkin",
+        "title": "每日积分签到",
+        "description": "按设定时间自动调用权益宝签到接口领取积分，结果推送到「签到」通知。",
+        "interval_minutes": 1440,
+        "kind": "checkin"
+      }
+    ],
+    "account": {
+      "title": "账号"
+    }
+  }
+}
