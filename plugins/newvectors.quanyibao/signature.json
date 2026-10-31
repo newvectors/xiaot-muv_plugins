@@ -21,10 +21,10 @@
   "plugin_id": "newvectors.quanyibao",
   "version": "1.1.2",
   "files": {
-   "README.md": "d3ea8ee26b440b21ac5f13f6078968c1a5506c5fcb992fae108363c19a2bd1aa",
-   "encrypted.json": "de4d27da4682ef83543a3cc1610a9784dd519b5d1bfef215a26e86d113239d31",
+   "README.md": "646ca8c1d3cc6d7d8f1703c13e89b4a2cb795f2c735496cd00c74df6cffae325",
+   "encrypted.json": "b6b0ab603d5a2470d80f542c60b115360136624bb6097bf7a1a5e458956245be",
    "manifest.json": "c21e7feba4acb35d1369065bbaee2033a91115d0721362786bccbfcd99fa5fec"
   }
  },
- "signature": "w14lX6EIPBRE397pciOnwTsH1AgZdSX77J3Is5iJvIBQyYnlR5lBAgdU1M2hlMG3/SAaD1BYyhVo3AgXcsfSBg=="
+ "signature": "yDWwjkuFSRhYjOVouygp6QV4y/edKG0jhn/JT+sX7/d4m1dsemdYSRzKHS323/VRriGc6BR5fmVCNNhba7mRCg=="
 }
