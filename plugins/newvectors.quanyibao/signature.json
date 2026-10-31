@@ -19,12 +19,12 @@
  },
  "payload": {
   "plugin_id": "newvectors.quanyibao",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "files": {
    "README.md": "d3ea8ee26b440b21ac5f13f6078968c1a5506c5fcb992fae108363c19a2bd1aa",
-   "encrypted.json": "2ac290900f28e3040e4ae52183959e6481f2c18ea947a5022f2c6d0f16d35050",
-   "manifest.json": "36abb2ee906007416e104c8645a5a1ad6289cbf00e6520b59e29308dd29e933a"
+   "encrypted.json": "de4d27da4682ef83543a3cc1610a9784dd519b5d1bfef215a26e86d113239d31",
+   "manifest.json": "c21e7feba4acb35d1369065bbaee2033a91115d0721362786bccbfcd99fa5fec"
   }
  },
- "signature": "L8z47Qs7DTOROAW5MkbwUs5K4G8X5F/NRsYa/2OQU3UFoWUSQ5QHm2usjkMuc/tIFRQQRK5nWkyvu/LJ1zBNCw=="
+ "signature": "w14lX6EIPBRE397pciOnwTsH1AgZdSX77J3Is5iJvIBQyYnlR5lBAgdU1M2hlMG3/SAaD1BYyhVo3AgXcsfSBg=="
 }

@@ -2,11 +2,11 @@
   "api": 1,
   "id": "newvectors.quanyibao",
   "name": "权益宝",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "min_mv_version": "3.13.2",
   "author": "XiaoT",
   "description": "登录权益宝（quanyibao.com）后搜索影视资源，用积分购买并返回 115 网盘分享链接给 Muvyo 转存。支持多账号（一行一个「账号|密码」）：设置页保存即逐个测试登录并显示各自积分，每日签到自动轮换所有账号，买片时积分不够自动换下一个账号。购买前会先读取服务端的解锁状态，已解锁的资源直接取链，不会重复扣分。",
-  "release_notes": "1.1.1：请求头按真实浏览器补齐——不再带默认的 Muvyo-Addon/1，改为与抓包一致的 Chrome UA，并带上 Accept-Language、sec-ch-ua 等客户端提示、跟随页面变化的 Referer 与 POST 的 Origin；UA 与客户端提示自动保持自洽（Safari/Firefox 不发送客户端提示）。新增「自定义 User-Agent」设置项，可直接粘贴自己浏览器的 UA，留空用内置值。",
+  "release_notes": "1.1.2：修复安装报错「config.0.placeholder：文字里不能有控制字符或换行」——多账号输入框的占位文字改成单行（Muvyo 只允许 description 换行）。请求头仍按真实浏览器发出：不再带默认的 Muvyo-Addon/1，改为 Chrome UA，并带 Accept-Language、sec-ch-ua 等客户端提示、跟随页面变化的 Referer 与 POST 的 Origin；新增「自定义 User-Agent」设置项。",
   "permissions": {
     "domains": [
       "www.quanyibao.com"
@@ -18,7 +18,7 @@
       "label": "多账号（一行一个）",
       "type": "textarea",
       "width": "full",
-      "placeholder": "me@example.com|mypass\na@example.com|pass2",
+      "placeholder": "me@example.com|mypass",
       "help": "一行一个账号，账号与密码用 | 分隔（全角｜也行），# 开头的行是注释。填了这里就忽略下面的「账号」「密码」，第 1 行是主账号，最多 12 个。保存后会自动逐个测试登录。"
     },
     {
